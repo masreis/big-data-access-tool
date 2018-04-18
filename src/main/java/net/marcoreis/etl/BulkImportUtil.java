@@ -1,10 +1,10 @@
 package net.marcoreis.etl;
 
-import org.apache.sqoop.tool.ListTablesTool;
-import org.apache.sqoop.tool.SqoopTool;
+import org.apache.sqoop.util.OptionsFileUtil;
 
 import com.cloudera.sqoop.SqoopOptions;
-
+import com.cloudera.sqoop.tool.ListTablesTool;
+import com.cloudera.sqoop.tool.SqoopTool;
 
 /**
  * 
@@ -13,16 +13,25 @@ import com.cloudera.sqoop.SqoopOptions;
  *
  */
 public class BulkImportUtil {
-	public static void main(String[] args) {
-	}
 
-	public void generateTableNamesFile() {
+	public void generateTableNamesFile(String[] args)
+			throws Exception {
 		SqoopTool listTables = new ListTablesTool();
-		listTables.run(getOptions());
+		listTables.run(getOptions(args));
 	}
 
-	private SqoopOptions getOptions() {
-		// TODO Auto-generated method stub
-		return null;
+	private SqoopOptions getOptions(String[] args)
+			throws Exception {
+		SqoopOptions sqoopOptions = new SqoopOptions();
+		sqoopOptions.setExtraArgs(args);
+		return sqoopOptions;
+	}
+
+	public static void main(String[] args) {
+		try {
+			new BulkImportUtil().generateTableNamesFile(args);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
