@@ -137,7 +137,7 @@
 						<id>install-external</id>
 						<phase>clean</phase>
 						<configuration>
-							<file>${project.basedir}/lib/jdbc/ojdbc7-12.1.0.1.jar</file>
+							<file>${project.basedir}/src/main/resources/ojdbc7-12.1.0.1.jar</file>
 							<repositoryLayout>default</repositoryLayout>
 							<groupId>com.oracle.jdbc</groupId>
 							<artifactId>ojdbc7</artifactId>
