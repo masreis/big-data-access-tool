@@ -1,4 +1,4 @@
-package net.marcoreis.etl;
+package net.marcoreis.bdat.etl;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package net.marcoreis.etl;
+package net.marcoreis.bdat.etl;
 
 import org.apache.sqoop.util.OptionsFileUtil;
 

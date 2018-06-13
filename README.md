@@ -1,7 +1,7 @@
-# An Big Data ETL Tool
-An ETL tool for big data in the cloud.
+# Big Data Access Tool
+An ETL tool for big data in the cloud, with 
 
-BDET é um framework para encurtar a criação e implantação de soluções big data através de um ETL semi-automático de integração com bases de dados relacionais, arquivos binários e arquivos textuais. 
+BDAT é um framework para encurtar a criação e implantação de soluções big data através de um ETL semi-automático de integração com bases de dados relacionais, arquivos binários e arquivos textuais. 
 
 O objetivo do BDET é que os usuários tenham acesso imediato aos serviços de análise de dados ou integração por meio de web services RESTful.  
 
@@ -12,6 +12,9 @@ Ele usa as técnicas e ferramentas mais recentes para BDaaS, habilitando funcion
 É uma parte da minha dissertação de mestrado.
 
 Data lake
+
+web services RESTful
+Spring Boot
 
 Object Storage
 
