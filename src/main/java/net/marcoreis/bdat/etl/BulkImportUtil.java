@@ -1,10 +1,7 @@
 package net.marcoreis.bdat.etl;
 
-import org.apache.sqoop.util.OptionsFileUtil;
-
 import com.cloudera.sqoop.SqoopOptions;
 import com.cloudera.sqoop.tool.ListTablesTool;
-import com.cloudera.sqoop.tool.SqoopTool;
 
 /**
  * 
@@ -16,8 +13,8 @@ public class BulkImportUtil {
 
 	public void generateTableNamesFile(String[] args)
 			throws Exception {
-		SqoopTool listTables = new ListTablesTool();
-		listTables.run(getOptions(args));
+		ListTablesTool tool = new ListTablesTool();
+		tool.run(getOptions(args));
 	}
 
 	private SqoopOptions getOptions(String[] args)
