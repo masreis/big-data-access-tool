@@ -1,26 +1,39 @@
 # Big Data Access Tool
-An ETL tool for big data in the cloud, with 
+Big Data Access Tool (BDAT) is used creating big data systems. The tool provides an access mechanism and an ETL (extract, transform and load) framework, helping to shorten the path to create and deploy big data solutions. It could be used in the cloud, actually, this is the main purpose.
 
-BDAT é um framework para encurtar a criação e implantação de soluções big data através de um ETL semi-automático de integração com bases de dados relacionais, arquivos binários e arquivos textuais. 
+The main functionalities provided are: 
 
-O objetivo do BDET é que os usuários tenham acesso imediato aos serviços de análise de dados ou integração por meio de web services RESTful.  
+* An API based on RESTful web services;
+* Import from relational databases;
+* Export to relational databases;
+* Messaging system;
+* Bulk import to NoSQL databases;
+* Supports data lakes based on HDFS and Object Storage;
 
-É parte de uma arquitetura de Big Data as a Service (BDaaS) e seu protótipo foi testado em nuvem privada com OpenStack para dar suporte a aplicações Hadoop, Spark, Cassandra, HBase e Hive.
+The toos used or supported in the BDAT are:
 
-Ele usa as técnicas e ferramentas mais recentes para BDaaS, habilitando funcionalidades da nuvem como elasticidade, provisionamento sob demanda, durabilidade dos dados e alta disponibilidade de recursos.   
+* Sqoop;
+* Spring Boot;
+* Kafka;
+* Cassandra;
+* Hive;
+* Spark;
+* OpenStack Swift;
 
-É uma parte da minha dissertação de mestrado.
+With the BDAT, the users have fast access to the data services, and the operations team has a simplified big data environment.
 
-Data lake
+This is part of a Big Data as a Service (BDaaS) implementation, based on OpenStack. The BDaaS supports Hadoop, Spark, Cassandra, HBase and Hive solutions. The BDAT uses specialized techniques for creating big data systems in a BDaaS environment.
 
-web services RESTful
-Spring Boot
+What is missing:
 
-Object Storage
+* An authentication mechanism;
+* Docker;
+* Kubernetes;
 
-* Cassandra bulk import
-* HBase
-* Hive
-* Spark
-* OpenStack Swift
-* S3
+Parameters to start the application: 
+
+* user.cassandra: Cassandra user;
+* server.cassandra: Cassandra server;
+* password.cassandra: Cassandra password;
+
+Tutorial to configure Kafka (missing):

@@ -13,10 +13,10 @@ import com.datastax.driver.core.Session;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan
-public class Application {
+public class BDATApplication {
 
 	private static Logger logger =
-			Logger.getLogger(Application.class);
+			Logger.getLogger(BDATApplication.class);
 	private Session session;
 	private Cluster cluster;
 	private String contactPoints =
@@ -26,7 +26,7 @@ public class Application {
 			System.getProperty("password.cassandra");
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(BDATApplication.class, args);
 	}
 
 	@Bean(destroyMethod = "close")

@@ -19,12 +19,24 @@
 		<version>2.0.2.RELEASE</version>
 	</parent>
 
-	<!-- <repositories> -->
-	<!-- <repository> -->
-	<!-- <id>cloudera</id> -->
-	<!-- <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url> -->
-	<!-- </repository> -->
-	<!-- </repositories> -->
+	<repositories>
+		<repository>
+			<id>spring-releases</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+
+		<repository>
+			<id>cloudera</id>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+		</repository>
+
+		<repository>
+			<id>org.jboss.repository.releases</id>
+			<name>JBoss Maven Release Repository</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 
@@ -58,10 +70,10 @@
 				<!-- <groupId>org.slf4j</groupId> -->
 				<!-- <artifactId>slf4j-log4j12</artifactId> -->
 				<!-- </exclusion> -->
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
+				<!-- <exclusion> -->
+				<!-- <groupId>log4j</groupId> -->
+				<!-- <artifactId>log4j</artifactId> -->
+				<!-- </exclusion> -->
 			</exclusions>
 		</dependency>
 
@@ -69,12 +81,12 @@
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-common</artifactId>
 			<version>${version.hadoop}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
+			<!-- <exclusions> -->
+			<!-- <exclusion> -->
+			<!-- <groupId>org.slf4j</groupId> -->
+			<!-- <artifactId>slf4j-log4j12</artifactId> -->
+			<!-- </exclusion> -->
+			<!-- </exclusions> -->
 		</dependency>
 
 		<!-- <dependency> -->
@@ -90,13 +102,22 @@
 		<!-- </exclusions> -->
 		<!-- </dependency> -->
 
+		<!-- https://mvnrepository.com/artifact/org.apache.sqoop/sqoop -->
 		<dependency>
 			<groupId>org.apache.sqoop</groupId>
 			<artifactId>sqoop</artifactId>
-			<version>1.4.7</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/sqoop-1.4.7.jar</systemPath>
+			<version>1.4.6-cdh5.12.0</version>
+			<type>pom</type>
 		</dependency>
+
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.sqoop</groupId> -->
+		<!-- <artifactId>sqoop</artifactId> -->
+		<!-- <version>1.4.7</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${project.basedir}/src/main/resources/sqoop-1.4.7.jar</systemPath> -->
+		<!-- </dependency> -->
 
 
 		<dependency>
@@ -123,9 +144,21 @@
 			<!-- <version>1.18.0.0</version> -->
 		</dependency>
 
+		<!-- Spring -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 
 		<!-- <dependency> -->
@@ -150,6 +183,49 @@
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka-streams</artifactId>
 			<!-- <version>1.1.0</version> -->
+		</dependency>
+
+
+		<!-- Swagger -->
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<!-- <version>1.2.3</version> -->
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>ch.qos.logback</groupId> -->
+		<!-- <artifactId>logback-classic</artifactId> -->
+		<!-- <version>1.2.3</version> -->
+		<!-- <exclusions> -->
+		<!-- <exclusion> -->
+		<!-- <groupId>org.slf4j</groupId> -->
+		<!-- <artifactId>slf4j-log4j12</artifactId> -->
+
+		<!-- </exclusion> -->
+		<!-- </exclusions> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<!-- <version>1.2.3</version> -->
 		</dependency>
 
 	</dependencies>
@@ -215,6 +291,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 
 		</plugins>
 	</build>

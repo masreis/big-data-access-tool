@@ -14,7 +14,8 @@ public class BulkImportUtil {
 	public void generateTableNamesFile(String[] args)
 			throws Exception {
 		ListTablesTool tool = new ListTablesTool();
-		tool.run(getOptions(args));
+		int ret = tool.run(getOptions(args));
+		System.out.println(ret);
 	}
 
 	private SqoopOptions getOptions(String[] args)
